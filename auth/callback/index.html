@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Renn - Connexion</title></head>
+<body>
+<p>Connexion en cours...</p>
+<script>
+  var params = window.location.search;
+  var code = new URLSearchParams(params).get('code');
+  if (code) {
+    window.location.href = 'renn://auth?code=' + encodeURIComponent(code);
+  } else {
+    window.location.href = 'renn://auth' + params;
+  }
+</script>
+</body>
+</html>
