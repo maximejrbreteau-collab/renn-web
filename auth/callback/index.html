@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>Renn - Connexion</title></head>
-<body>
-<p>Connexion en cours...</p>
+<head><meta charset="utf-8"><title>Renn</title></head>
+<body><p>Connexion en cours...</p>
 <script>
-  var params = window.location.search;
-  var code = new URLSearchParams(params).get('code');
+  var code = new URLSearchParams(window.location.search).get('code');
   if (code) {
-    window.location.href = 'renn://auth?code=' + encodeURIComponent(code);
-  } else {
-    window.location.href = 'renn://auth' + params;
+    window.location.href = 'intent://auth?code=' + encodeURIComponent(code) + '#Intent;scheme=renn;package=com.mongarage.app;end';
   }
 </script>
 </body>
